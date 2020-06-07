@@ -22,11 +22,11 @@ spec:
       {{ include "postgres" . | indent 6 }}
       {{- end -}}
       {{ include "gitea" . | indent 6 }}
-      {{- if .Values.memcached.enabled }}
+      {{ if .Values.memcached.enabled }}
       {{ include "memcached" . | indent 6 }}
-      {{- end -}}
+      {{ end -}}
       initContainers:
-      {{ include "init" . | indent 6 }}
+      {{- include "init" . | indent 6 }}
       {{ include "initPostgres" . | indent 6 }}
       volumes:
       - name: gitea-data
