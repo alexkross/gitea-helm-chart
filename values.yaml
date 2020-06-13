@@ -200,21 +200,5 @@ config:
 #   [service]
 #   ENABLE_USER_HEATMAP=false
 
-initUser:
-  enabled: false
-  # existingServiceAccount: 'secret'
-  secretName: gitea-admin-token
-  oidc:
-    enabled: false
-    name:
-    provider:
-    clientKey:
-    clientSecret:
-
-  rbac:
-    create: true
-    serviceAccount:
-      create: true
-      name: ""
 deployment:
   annotations: {}
