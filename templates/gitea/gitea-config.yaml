@@ -687,7 +687,7 @@ data:
     ; Send mails as plain text
     SEND_AS_PLAIN_TEXT = false
     ; Set Mailer Type (either smtp, sendmail or dummy to just send to the log)
-    MAILER_TYPE = dummy
+    MAILER_TYPE = smtp
     ; Specify an alternative sendmail binary
     SENDMAIL_PATH = sendmail
     ; Specify any extra sendmail arguments
