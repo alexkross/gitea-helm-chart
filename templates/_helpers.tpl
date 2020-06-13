@@ -26,12 +26,12 @@ If release name contains chart name it will be used as a full name.
 */}}
 {{- define "postgresql.fullname" -}}
 {{- $name := default .Chart.Name "postgres" -}}
-{{- printf "%s-%s" .Release.Name $name | trunc 24 -}}
+{{- printf "%s-%s-%s" .Release.Name .Chart.Name $name | trunc 24 -}}
 {{- end -}}
 
 {{- define "db.fullname" -}}
 {{- $name := default .Chart.Name "db" -}}
-{{- printf "%s-%s" .Release.Name $name | trunc 24 -}}
+{{- printf "%s-%s-%s" .Release.Name .Chart.Name $name | trunc 24 -}}
 {{- end -}}
 
 

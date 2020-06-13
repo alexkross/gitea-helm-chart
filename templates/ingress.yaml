@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Ingress
 metadata:
-  name: {{ template "fullname" . }}ingress
+  name: {{ template "fullname" . }}
   namespace: {{ .Release.Namespace }}
   labels:
     {{- include "gitea.labels" . | nindent 4 }}
