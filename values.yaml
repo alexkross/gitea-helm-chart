@@ -131,7 +131,7 @@ externalDB:
 
 # valid types: postgres, mysql, mssql, sqllite
 dbType: "postgres"
-useInPodPostgres: false
+useInPodPostgres: true
 
 inPodPostgres:
     secret: postgresecrets

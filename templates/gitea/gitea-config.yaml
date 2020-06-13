@@ -686,8 +686,8 @@ data:
     PASSWD = {{ .Values.config.mailer.passwd }}
     ; Send mails as plain text
     SEND_AS_PLAIN_TEXT = false
-    ; Set Mailer Type (either SMTP, sendmail or dummy to just send to the log)
-    MAILER_TYPE = smtp
+    ; Set Mailer Type (either smtp, sendmail or dummy to just send to the log)
+    MAILER_TYPE = dummy
     ; Specify an alternative sendmail binary
     SENDMAIL_PATH = sendmail
     ; Specify any extra sendmail arguments
@@ -1041,7 +1041,7 @@ data:
     ; Enables metrics endpoint. True or false; default is false.
     ENABLED = {{ .Values.config.metrics.enabled }}
     ; If you want to add authorization, specify a token here
-    TOKEN = TOKEN = {{ .Values.config.metrics.token }}
+    TOKEN = {{ .Values.config.metrics.token }}
 
     [task]
     ; Task queue type, could be `channel` or `redis`.
