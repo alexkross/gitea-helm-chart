@@ -9,7 +9,6 @@ images:
   imagePullPolicy: ifNotPresent
   ## Specify imagePullSecrets
   ## ref: https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
-  ##
   # imagePullSecrets: myregistrykey
 
 ## cache settings
@@ -38,10 +37,10 @@ ingress:
   # kubernetes.io/ingress.class: contour
 
   ##tls support for the ingress
-  tls:
-  - secretName: gitea-tls
-    hosts:
-    - git.example.com
+  # tls:
+  # - secretName: gitea-tls
+  #   hosts:
+  #   - git.example.com
 
 ## chart defaults to using an ingress for http, but change to LoadBalancer if using you cluster supports it
 service:
@@ -49,16 +48,16 @@ service:
     serviceType: ClusterIP
     port: 3000
     # nodePort: 30280
-    # sometimes if is necesary to access through an external port i.e. http(s)://<dns-name>:<external-port>
-    externalPort: 8280
-    externalHost: git.example.com
-    #some parts of gitea like the api use a redirect needs config if using non standard ports
-    #httpAPIPort: 8280
+    ## sometimes if is necesary to access through an external port i.e. http(s)://<dns-name>:<external-port>
+    # externalPort: 8280
+    # externalHost: git.example.com
+    ## some parts of gitea like the api use a redirect needs config if using non standard ports
+    # httpAPIPort: 8280
     ## if serviceType is LoadBalancer
-    #loadBalancerIP: "192.168.0.100"
-    #svc_annotations:
-    #  service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-    #  service.beta.kubernetes.io/azure-load-balancer-internal-subnet: "a_subnet"
+    # loadBalancerIP: "192.168.0.100"
+    # svc_annotations:
+    #   service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+    #   service.beta.kubernetes.io/azure-load-balancer-internal-subnet: "a_subnet"
   ssh:
     serviceType: ClusterIP
     port: 22

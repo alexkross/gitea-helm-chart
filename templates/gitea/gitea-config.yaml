@@ -247,7 +247,7 @@ data:
     {{- else -}}
     {{- $proto := set . "proto" "http" }}
     {{- end -}}
-    {{- if and .Values.service.http.externalHost ( .Values.service.http.externalPort ) }}
+    {{- if and .Values.service.http.externalHost .Values.service.http.externalPort }}
     ROOT_URL = {{ .proto }}://{{ .Values.service.http.externalHost }}:{{ .Values.service.http.externalPort  }}/
     {{- else if .Values.service.http.externalHost }}
     ROOT_URL = {{ .proto }}://{{ .Values.service.http.externalHost }}/
